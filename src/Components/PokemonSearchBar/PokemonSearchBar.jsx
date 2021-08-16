@@ -26,7 +26,7 @@ function PokemonSearchBar() {
 
   return (
     <div>
-      <h1>Введіть ім'я покумона, або номер id</h1>
+      <h1>Введіть ім'я покемона, або номер id</h1>
       <form autoComplete="off" onClick={handleSubmit}>
         <input type="text" name="pokemonName" />
         <button type="submit">Search</button>
