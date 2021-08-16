@@ -1,7 +1,13 @@
+import PokemonSearchBar from "./Components/PokemonSearchBar";
+
 import "./App.css";
 
 export default function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <PokemonSearchBar />
+    </div>
+  );
 }
 
 // THE CODE IS WRITTEN IN CLASSES
