@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { pokemonApi } from "../helpers/pokemonAPI";
 
-const rootReducer = () => {
-  return 0;
-};
-
-const store = configureStore({
-  reducer: rootReducer,
-  devTools: process.env.NODE_ENV !== "production",
+export const store = configureStore({
+  reducer: {
+    [pokemonApi.reducerPath]: pokemonApi.reducer,
+    devTools: process.env.NODE_ENV !== "production",
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(pokemonApi.middleware),
 });
+
+setupListeners(store.dispatch);
 
 export default store;
